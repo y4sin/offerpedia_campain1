@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerpedia | Login / Signup</title>
+    <link rel="stylesheet" href="/dist/style.css">
+</head>
+<body class="bg-black_3">
+    <!-- header starts here  -->
+    <header class="mt-40">
+        <div class="px-6 py-4">
+            <div>
+                <h1 class="text-white text-3xl font-bold">Welcome,</h1>
+                <p class="text-[#DEE6E4]">Enter your phone number to continue </p>
+            </div>
+            <form class="flex items-center bg-bg_black rounded-xl my-9">
+                <img src="../media/India.svg" alt="">
+                <span class="h-12 bg-[#293330] w-[1px]"></span>
+                <input id="phoneNumberInput" class="ml-4 mr-2 bg-bg_black text-primary focus:outline-none" type="tel" oninput="checkPhoneNumber()">
+                <img id="secondImage" src="../media/Path 471.svg" alt="" style="display: none;">
+            </form>
+        </div>
+        <div class="flex justify-center">
+            <button id="verify" class="text-primary px-20 py-2 bulk-btn rounded-3xl border-[1px] border-primary flex bg-bg_black" onclick="redirectToNewPage()">Verify</button>
+        </div>
+    </header>
+
+    <!-- footer starts here  -->
+    <footer class="flex justify-center mt-52 mb-8">
+        <img src="../media/logo 1.svg" alt="">
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>

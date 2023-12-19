@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OfferPedia | Offer</title>
+  <link rel="stylesheet" href="../dist/style.css">
+</head>
+
+<body class="bg-black_3">
+
+  <!-- ==== header starts here ==== -->
+
+  <header class="flex items-center pr-4">
+    <div>
+      <img id="icon" src="./media/3d icons.svg" alt="OfferPedia Logo">
+    </div>
+    <div>
+      <div id="overlay" class="bg-bg_black">
+        <div class="flex items-center mx-6 my-10 justify-between">
+            <h1 class="text-white font-semibold" >McDonald's</h1>
+            <img src="./media/add.svg" alt="" id="close_overlay">
+        </div>
+        <div class="mx-6">
+            <h1 class="text-light mb-8">Breakfast</h1>
+            <h1 class="text-light mb-8">Burgers</h1>
+            <h1 class="text-light mb-8">Beverages</h1>
+            <p class="text-light "><a href="#">View my offer</a></p>
+        </div>
+        <div class="mx-6 my-8 flex gap-2">
+            <div class="flex items-center gap-2 border border-primary p-2 rounded-full">
+                <img src="./media/Social Icons.svg" alt="">
+                <h1  class="text-light text-sm "><a href="#">WhatsApp us</a></h1>
+            </div>
+            <div class="flex items-center gap-2 border border-primary p-2 rounded-full">
+                <img src="./media/Share.svg" alt="">
+                <h1  class="text-light text-sm">Share with friends</h1>
+            </div>
+            
+        </div>
+        
+        <div class="language-div mx-6 ">
+            <div class="language-dropdown flex justify-between rounded-xl p-4" onclick="toggleLanguageOptions()">
+                <span id="selectedLanguage">English</span>
+            </div>
+            <img class="dropdown-arrow " src="./media/arrow-down.svg" alt="">
+            <div class="language-options rounded-br-xl rounded-bl-xl" id="languageOptions" onmouseleave="hideLanguageOptions()">
+                <div class="language-option " onclick="selectLanguage('English')">English</div>
+                <div class="language-option" onclick="selectLanguage('Arabic')">Arabic</div>
+                <div class="language-option" onclick="selectLanguage('Spanish')">Spanish</div>
+                <div class="language-option" onclick="selectLanguage('Chinese')">Chinese</div>
+            </div>
+        </div>
+        <div  class="  flex justify-center relative -bottom-52">
+            <img  src="./media/logo 1.svg" alt="">
+        </div>
+    </div>
+    <div>
+      <h1 class="text-2xl font-sans font-bold text-light justify-self-start">Campaign Name</h1>
+    </div>
+  </header>
+  <main class="max-w-[80%] mx-auto flex flex-col relative z-[1] justify-center">
+    <div>
+      <h1 class="text-primary text-center font-semibold font-sans mt-4" id="scratch_to_r">Scratch Here to reveal the prize !</h1>
+    </div>
+    <div class="js-container relative h-[320px] w-[300px] select-none mx-auto mt-8 mb-10 rounded-xl" id="js-container">
+      <canvas class="canvas absolute top-0 rounded-xl transition-all duration-1000" id="js-canvas" width="300" height="320"></canvas>
+      <div class="flex bg-primary_light justify-center items-center rounded-xl " id="surprise" style="visibility: hidden;">
+        <div class="p-4 flex flex-col items-center ">
+          <h1 class="font-sans text-bg_black text-xl font-semibold">Congratulations !</h1>
+          <img class="select-none bg-white p-2 rounded-xl my-2" src="./media/1 75.svg" alt="Error">
+          <p class="text-primary_dark text-[1.5rem]"><span class="font-black text-5xl font-">10%</span> OFF</p>
+          <p class="font-extrabold text-primary_dark text-xl my-1 p-3">Fajitha Sandwitch</p>
+          <p class="text-bg_black font-medium text-sm">Save up to 10% on your next purchase.</p>
+        </div>
+      </div>
+    </div>
+    
+  </main>
+  
+  <div class="max-w-fit mx-auto flex justify-center flex-col items-center">
+    <p class="text-lg text-light font-medium text-center" id="after_sc_d">Chance to win upto 30% Off </p>
+    <button><a href="./login/login.html" id="redeem_btn" class="text-center py-2 px-24 border border-solid border-primary font-sans rounded-3xl text-primary font-semibold  max-w-fit bulk-btn " style="display: none;">Redeem Now</a></button>
+    
+  </div>
+
+  <footer  class="mt-20 grid justify-center">
+    <div class="mx-6 mb-8  flex flex-col justify-center">
+        <h1 class="text-lg text-[#999999] mb-2 font-bold">How this works</h1>
+        <ul class="text-[#999999] ls-in">
+            <li >Aut dicta quia. Ut repellat autem vitae. Cupiditate eaque</li>
+            <li >Aut dicta quia. Ut repellat autem vitae. Cupiditate eaque</li>
+        </ul>
+    </div>
+    <div class="mx-6 mb-8  flex flex-col justify-center">
+      <h1 class="text-lg text-[#999999] mb-2 font-bold">Terms and condition</h1>
+      <ul class="text-[#999999] ls-in">
+          <li >Aut dicta quia. Ut repellat autem vitae. Cupiditate eaque</li>
+          <li >Aut dicta quia. Ut repellat autem vitae. Cupiditate eaque</li>
+      </ul>
+  </div>
+  </footer>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

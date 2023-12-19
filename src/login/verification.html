@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerpedia | Verification</title>
+    <link rel="stylesheet" href="/dist/style.css">
+</head>
+<body class="bg-black_3">
+    <!-- header starts here  -->
+    <header class="mt-28 px-6 py-4" >
+        <h1 class="font-bold text-3xl text-[#DEE6E4]">Verification</h1>
+        <p class="text-[#DEE6E4]">A 6-Digit PIN has been sent to your phone, enter it below to continue. </p>
+        <div class="flex flex-col gap-2 mt-8 ">
+            <form method="get" class="digit-group flex justify-between gap-2" data-group-name="digits" data-autosubmit="true" autocomplete="off">
+                <input type="text" id="digit-1" name="digit-1" data-next="digit-2" maxlength="1" />
+                <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" maxlength="1" />
+                <input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" maxlength="1" />
+            
+                <input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" maxlength="1" />
+                <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" maxlength="1" />
+                <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" maxlength="1" />
+            </form>
+            <div class="flex items-center justify-between mt-2 text-sm">
+                <p class=" text-[#DEE6E4] ">Didn't receive a code yet! <a href="#" class="text-primary ">Resend Code</a></p>
+                <div id="timer" >5:00</div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-8">
+            <button class="text-primary px-20 py-2 bulk-btn rounded-3xl border-[1px] border-primary flex bg-bg_black" ><a href="../scratch_invoice.html">Continue</a></button>
+        </div>
+    </header>
+       <!-- footer starts here  -->
+    <footer class="flex justify-center mt-52 mb-8">
+        <img src="../media/logo 1.svg" alt="">
+    </footer>
+    
+
+      
+
+    <script>
+
+
+        var timeLimit = 5 * 60; 
+
+            function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                timer = duration;
+                }
+            }, 1000);
+            }
+
+            window.onload = function () {
+            var timerDisplay = document.getElementById("timer");
+            startTimer(timeLimit, timerDisplay);
+            };
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        var inputs = document.querySelectorAll('.digit-group input');
+        
+        inputs.forEach(function(input) {
+            input.addEventListener('input', function() {
+                moveToNext(input);
+            });
+
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace') {
+                    moveToPrevious(input);
+                }
+            });
+        });
+    });
+
+    function moveToNext(input) {
+        var maxLength = parseInt(input.getAttribute('maxlength'));
+        var currentLength = input.value.length;
+
+        if (currentLength === maxLength) {
+            var nextId = input.getAttribute('data-next');
+            var nextInput = document.getElementById(nextId);
+
+            if (nextInput) {
+                nextInput.focus();
+            }
+        }
+    }
+
+    function moveToPrevious(input) {
+        var previousId = input.getAttribute('data-previous');
+        var previousInput = document.getElementById(previousId);
+
+        if (previousInput) {
+            previousInput.value = '';
+            previousInput.focus();
+        }
+    }
+
+            
+    </script>
+</body>
+</html>
